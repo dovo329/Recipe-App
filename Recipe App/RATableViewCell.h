@@ -1,5 +1,5 @@
 //
-//  RADetailViewController.h
+//  RATableViewCell.h
 //  Recipe App
 //
 //  Created by Douglas Voss on 4/29/15.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RADetailViewController : UIViewController
-
-@property (nonatomic, assign) NSInteger recipeIndex;
+@interface RATableViewCell : UITableViewCell
 
 @end

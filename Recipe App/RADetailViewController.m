@@ -17,10 +17,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
-    self.view.frame = [[UIScreen mainScreen] bounds];
+    //NSLog(@"viewDidLoad");
     self.view.backgroundColor = [UIColor redColor];
 }
+
+/*
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    NSLog(@"viewDidAppear");
+}
+*/
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -8,6 +8,7 @@
 
 #import "RecipesTableViewDataSource.h"
 #import "RARecipes.h"
+#import "RATableViewCell.h"
 
 @implementation RecipesTableViewDataSource
 
@@ -16,11 +17,16 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
+    RATableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
     if (!cell){
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
+        cell = [[RATableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellID];
     }
     cell.textLabel.text = [RARecipes recipeAtIndex:indexPath.row][@"recipeTitle"];
+    cell.detailTextLabel.text = [RARecipes recipeAtIndex:indexPath.row][@"recipeDescription"];
+    NSLog(@"%@", cell.detailTextLabel.text);
+    NSLog(@"%@", [RARecipes recipeAtIndex:indexPath.row][@"recipeDescription"]);
+    
+    NSLog(@"[RATableViewCell class] == %@", [RATableViewCell class]);
     
     return cell;
     
@@ -29,7 +35,7 @@
 
 -(void)regesterTableView:(UITableView *)tableView {
     
-    [tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:cellID];
+    [tableView registerClass:[RATableViewCell class] forCellReuseIdentifier:cellID];
     
 }
 @end

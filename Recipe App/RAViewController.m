@@ -22,7 +22,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    self.tableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewCellStyleDefault];
+    self.tableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain];
     self.dataSource = [[RecipesTableViewDataSource alloc] init];
     [self.dataSource regesterTableView:self.tableView];
     self.tableView.dataSource = self.dataSource;
@@ -59,7 +59,7 @@
     NSLog(@"got called");
     
     RADetailViewController *detailViewController = [RADetailViewController new];
-    
+    detailViewController.recipeIndex = (NSInteger)indexPath.row;
     [self.navigationController pushViewController:detailViewController animated:YES];
 }
 
