@@ -57,4 +57,3 @@ We need to pass the indexPath.row of the selected cell to the DetailViewControll
 - Add the description of each recipe in small text on the main view
 - Stylize the detail view. Fonts, layout, color.
 - Can you add an imageview to the top of the recipe detail view?
--
